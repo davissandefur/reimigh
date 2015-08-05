@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html lang="en">
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static 'base.css' %}" />
+<link href='http://fonts.googleapis.com/css?family=Dancing+Script' rel='stylesheet' type='text/css'><head>
+    <meta charset='utf-8'>
+    <title>Irish Verb Conjugator</title>
+</head>
+
+<body>
+
+<div>
+    <h1 class="Irish">Fáilte!</h1>
+
+    <h3 class="English"><i>Welcome!</i></h3>
+
+    <p class="Irish">Fáilte go Réimeadór Bhriathra na Gaeilge. Nuair a roghnaíonns tú briathar, 'spánfaidh
+        an leathanach réimniú an bhriathair, fiú na foirmeachaí canúnach. Tagann an fhoirm chaighdeánach sa gcéad
+        áit.</p>
+
+    <p class="English"><i>Welcome to the Irish Verb Conjugator. When you select a verb, the page will display the full
+        conjugation paradigm, including dialectal forms. The standard forms will always come first.</i> </p>
+</div>
+
+
+<form method="POST" class="test"> {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Roghnaigh">
+</form>
+{% if choice %}
+{% block table %}{% endblock %}
+{% endif %}
+
+</body>
+</html>

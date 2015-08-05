@@ -1,0 +1,88 @@
+{% extends "base.html" %}
+
+{% block table %}
+<table style="background:#f0f0f0;border-collapse:separate;border-spacing:2px">
+    <tr>
+        <th colspan="2" rowspan="2"></th>
+        <th colspan="3">Uatha</th>
+        <th colspan="3">Iolra</th>
+        <th rowspan="2">An Fhoirm Choibhneasta</th>
+        <th rowspan="2">Saorbhriathar</th>
+    </tr>
+    <tr>
+        <th style="width:10%" scope="col">Céad Phearsa</th>
+        <th style="width:10%" scope="col">Dara Pearasa</th>
+        <th style="width:10%" scope="col">Tríú Pearsa</th>
+        <th style="width:10%" scope="col">Céard Phearsa </th>
+        <th style="width:10%" scope="col">Dara Pearsa</th>
+        <th style="width:10%" scope="col">Tríú Pearsa</th>
+    </tr>
+    <tr>
+        <th colspan="2">An Aimsir Chaite <br> (Past Tense)</th>
+        {% for item in choice.past %}
+        <td>{{ item | safe }}</td>
+        {% endfor %}
+
+    </tr>
+    <tr>
+        <th colspan="2">An Aimsir Láithreach <br> (Present Tense)</th>
+        {% for item in choice.present %}
+        <td>{{ item | safe }}</td>
+        {% endfor %}
+    </tr>
+
+    {% if habitual_present %}
+    <tr>
+        <th colspan="2">An Aimsir Gnáthláirthreach <br>(Habitual Present)</th>
+        {% for item in choice.habitual_present %}
+        <td>{{ item | safe }}</td>
+        {% endfor %}
+    </tr>
+    {% endif %}
+
+    <tr>
+        <th colspan="2">An Aimsir Fháistineach <br>(Future Tense)</th>
+        {% for item in choice.future %}
+        <td>{{ item | safe }}</td>
+        {% endfor %}
+    </tr>
+    <tr>
+        <th colspan="2">An Modh Coinníolach <br> (Conditional Mood)</th>
+        {% for item in choice.conditional %}
+        <td>{{ item | safe }}</td>
+        {% endfor %}
+    </tr>
+    <tr>
+        <th colspan="2">An Aimsir Gnáthchaite <br> (Past Habitual)</th>
+        {% for item in choice.past_habitual %}
+        <td>{{ item | safe }}</td>
+        {% endfor %}
+    </tr>
+    <tr>
+        <th colspan="2">An Modh Foshuiteach - Láithreach <br> (Present Subjunctive)</th>
+        {% for item in choice.subjunctive %}
+        <td>{{ item | safe }}</td>
+        {% endfor %}
+    </tr>
+    <tr>
+        <th colspan="2">An Modh Foshuiteach - Caite <br> (Past Subjunctive)</th>
+        {% for item in choice.past_subjunctive %}
+        <td>{{ item | safe }}</td>
+        {% endfor %}
+    </tr>
+    <tr>
+        <th colspan="2">An Modh Ordaitheach <br> (Imperative)</th>
+        {% for item in choice.imperative %}
+        <td>{{ item | safe }}</td>
+        {% endfor %}
+    </tr>
+    <tr>
+        <th colspan="2">An tAinm Briathartha <br> (Verbal Noun)</th>
+        <td>{{ choice.verbal_noun | safe }}</td>
+    </tr>
+    <tr>
+        <th colspan="2">An Aidiacht Bhriathartha <br> (Verbal Adjective)</th>
+        <td>{{ choice.verbal_adjective }}</td>
+    </tr>
+</table>
+{% endblock %}
