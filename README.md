@@ -8,3 +8,5 @@ This project **is not** complete yet, and still needs styling work done (any aes
 However, with that said, it is unlikely this iteration will ever be publically deployed, as it was designed to teach me 
 how to make an app using Django only. A newer version will be created after I am finished using Django REST
 framework and a JavaScript framework (likely Angular).
+
+The regular Django app is contained in the Django directory, while the Django REST framework app will be contained in the rest directory.
